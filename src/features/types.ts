@@ -10,3 +10,7 @@ export type Faker = {
     price: () => number;
 }
 
+export type CartItem = {
+    product: Product;
+    quantity: number;
+}
