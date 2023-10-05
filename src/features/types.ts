@@ -14,3 +14,8 @@ export type CartItem = {
     product: Product;
     quantity: number;
 }
+
+// How do you work?
+export type ProductCard = {
+    product: Product;
+  }
