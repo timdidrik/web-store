@@ -39,7 +39,7 @@ export const faker: Faker = {
 
 
 // Get as many fake random products as you want
-const getRandomProducts = (count: number): Product[] =>
+export const getRandomProducts = (count: number): Product[] =>
 
 // Array.from takes two arguments, here --->
 // length = first argument, () = second argument which
