@@ -1,5 +1,3 @@
-'use client';
-
 import type { CartItemProps, ShoppingCartDrawerProps, ShoppingCartButtonProps } from "@/features/types";
 import React from "react";
 
@@ -20,13 +18,14 @@ export default function ShoppingCartDrawer({ isCartOpen, toggleCart, cart }: Sho
     // doSomething
   }
 
+  //<input type="number" value={product.quantity} />
   return (
     <div className={`cart-drawer ${isCartOpen ? 'open' : ''}`} >
       <button className="close-cart-button" onClick={closeCart}>Exit</button>
       {cart.map((product) => (
         <div key={product.title}>
           <h3>{product.title}</h3>
-          <input type="number" value={product.quantity} />
+          <input type="number" defaultValue={product.quantity} />
           <button className="close-cart-button" onClick={() => { addToCart(product) }}>+</button>
           <button className="close-cart-button" onClick={() => { removeFromCart(product) }}>-</button>
         </div>
