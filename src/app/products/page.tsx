@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProductCard from "@/components/ProductCard";
 import ShoppingCartButton from "@/components/ShoppingCartButton";
 import ShoppingCartDrawer from "@/components/ShoppingCartDrawer";
@@ -8,19 +8,20 @@ import { getRandomProducts } from "@/features/createProduct";
 import type { CartItemProps } from "@/features/types";
 
 export default function Home() {
-const fakeProducts = getRandomProducts(6);
+//const fakeProducts = getRandomProducts(6);
 
+const [products, setProducts] = useState<CartItemProps[]>([]);
 const [isCartOpen, setIsCartOpen] = useState(false);
 const [cart, setCart] = useState<CartItemProps[]>([]);
 
+useEffect(() => {
+  const fakeProducts = getRandomProducts(6);
+
+  setProducts(fakeProducts);
+}, []);
+
 const toggleCart = () => {
   setIsCartOpen(!isCartOpen);
-}
-
-const addToCart2 = (product: CartItemProps) => {
-  const updatedCart = [...cart, product];
-
-  setCart(updatedCart);
 }
 
 const addToCart = (product: CartItemProps) => {
@@ -46,11 +47,16 @@ const addToCart = (product: CartItemProps) => {
     <>
     <div className="main-cart-container">
     <ShoppingCartButton toggleCart={toggleCart}/>
-    <ShoppingCartDrawer isCartOpen={isCartOpen} cart={cart} toggleCart={toggleCart}/>
+    <ShoppingCartDrawer 
+      isCartOpen={isCartOpen}
+      cart={cart}
+      toggleCart={toggleCart}
+      setCart={setCart}
+      />
     </div>
 
       <div className="cart-container">
-        {fakeProducts.map((product) => (
+        {products.map((product) => (
           <ProductCard key={product.id} product={product} addToCart={addToCart}/>
         ))}
       </div>
