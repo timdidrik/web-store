@@ -1,7 +1,8 @@
-export type Product = {
+export type ProductProps = {
     title: string;
     category: string;
     price: number;
+    quantity?: number;
 }
 
 export type Faker = {
@@ -11,13 +12,23 @@ export type Faker = {
 }
 
 export type CartItemProps = {
-    product?: Product;
+    product?: ProductProps;
     title: string;
     price: number;
     quantity: number;
 }
 
 // How do you work?
-export type ProductCard = {
-    product: Product;
+export type ProductCardProps = {
+    product: ProductProps;
   }
+
+export type ShoppingCartDrawerProps = {
+    cart: CartItemProps[];
+    isCartOpen: boolean;
+}
+
+export type ShoppingCartButtonProps = {
+    toggleCart: () => void;
+}
+

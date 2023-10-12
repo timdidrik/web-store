@@ -1,4 +1,4 @@
-import type { Faker, Product } from "./types"
+import type { Faker, ProductProps } from "./types"
 
 // Define some fake products
 const fakeTitles: string[] = [
@@ -39,7 +39,7 @@ export const faker: Faker = {
 
 
 // Get as many fake random products as you want
-export const getRandomProducts = (count: number): Product[] =>
+export const getRandomProducts = (count: number): ProductProps[] =>
 
 // Array.from takes two arguments, here --->
 // length = first argument, () = second argument which
