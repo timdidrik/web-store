@@ -39,14 +39,18 @@ export const faker: Faker = {
 
 
 // Get as many fake random products as you want
-export const getRandomProducts = (count: number): ProductProps[] =>
+// Need to give each product a unique index to solve hydration error
+let idCounter = 1;
 
+export const getRandomProducts = (count: number): ProductProps[] =>
 // Array.from takes two arguments, here --->
 // length = first argument, () = second argument which
 // is the arrow function containing faker objects
 // I think - brain meltdown, I will move on.
   Array.from({ length: count }, () => ({
+    id: (idCounter++),
     title: faker.title(),
     category: faker.category(),
     price: faker.price(),
+    quantity: 0,
   }));
