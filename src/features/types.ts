@@ -1,11 +1,9 @@
-'use client';
-
 export type ProductProps = {
     id: number;
     title: string;
-    category: string;
+    category?: string;
     price: number;
-    quantity?: number;
+    quantity: number;
 }
 
 export type Faker = {
@@ -24,13 +22,14 @@ export type CartItemProps = {
 
 // How do you work?
 export type ProductCardProps = {
-    product: ProductProps;
+    product: ProductProps | CartItemProps;
     addToCart: (product: CartItemProps) => void;
   }
 
 export type ShoppingCartDrawerProps = {
     cart: CartItemProps[];
     isCartOpen: boolean;
+    setCart: React.Dispatch<React.SetStateAction<CartItemProps[]>>;
 }
 
 export type ShoppingCartButtonProps = {
