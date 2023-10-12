@@ -1,4 +1,7 @@
+'use client';
+
 export type ProductProps = {
+    id: number;
     title: string;
     category: string;
     price: number;
@@ -13,6 +16,7 @@ export type Faker = {
 
 export type CartItemProps = {
     product?: ProductProps;
+    id?: number;
     title: string;
     price: number;
     quantity: number;
@@ -21,6 +25,7 @@ export type CartItemProps = {
 // How do you work?
 export type ProductCardProps = {
     product: ProductProps;
+    addToCart: (product: CartItemProps) => void;
   }
 
 export type ShoppingCartDrawerProps = {
