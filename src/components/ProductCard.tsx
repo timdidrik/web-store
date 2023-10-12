@@ -1,11 +1,21 @@
-'use client'
-
 import React from "react";
-import type { ProductCardProps } from "@/features/types";
+import type { ProductCardProps, CartItemProps } from "@/features/types";
 
 export default function ProductCard(props: ProductCardProps) {
+    console.log("Adding to cart:", props.product)
+    
     const handleAddToCart = () => {
-        // Implement logic to add product to cart
+        const cartItem: CartItemProps = {
+            title: props.product.title,
+            price: props.product.price,
+            quantity: 1,
+        }
+
+        console.log("Current cart:", cartItem);
+
+        props.addToCart(cartItem);
+
+        console.log("Current cart:", cartItem);
     }
     
     return (
