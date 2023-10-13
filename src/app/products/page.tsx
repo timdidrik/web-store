@@ -6,6 +6,7 @@ import ShoppingCartButton from "@/components/ShoppingCartButton";
 import ShoppingCartDrawer from "@/components/ShoppingCartDrawer";
 import { getRandomProducts } from "@/features/createProduct";
 import type { CartItemProps } from "@/features/types";
+import Nav from "@/components/Nav";
 
 export default function Home() {
 
@@ -63,6 +64,7 @@ const addToCart = (product: CartItemProps) => {
 
   return (
     <>
+    <Nav />
     <div className="main-cart-container">
     <ShoppingCartButton toggleCart={toggleCart}/>
     <ShoppingCartDrawer 
