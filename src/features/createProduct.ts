@@ -39,8 +39,8 @@ export const faker: Faker = {
 
 
 // Get as many fake random products as you want
-// Need to give each product a unique index to solve hydration error
-let idCounter = 1;
+// Need to give each product a unique index
+let idCounter = 0;
 
 export const getRandomProducts = (count: number): ProductProps[] =>
 // Array.from takes two arguments, here --->
@@ -52,5 +52,5 @@ export const getRandomProducts = (count: number): ProductProps[] =>
     title: faker.title(),
     category: faker.category(),
     price: faker.price(),
-    quantity: 0,
+    quantity: 1,
   }));
