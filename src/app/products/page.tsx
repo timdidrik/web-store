@@ -8,7 +8,6 @@ import { getRandomProducts } from "@/features/createProduct";
 import type { CartItemProps } from "@/features/types";
 
 export default function Home() {
-//const fakeProducts = getRandomProducts(6);
 
 const [products, setProducts] = useState<CartItemProps[]>([]);
 const [isCartOpen, setIsCartOpen] = useState(false);
