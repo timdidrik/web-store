@@ -14,10 +14,29 @@ const [isCartOpen, setIsCartOpen] = useState(false);
 const [cart, setCart] = useState<CartItemProps[]>([]);
 
 useEffect(() => {
-  const fakeProducts = getRandomProducts(6);
+  const fakeProducts = getRandomProducts(8);
 
   setProducts(fakeProducts);
 }, []);
+
+// Think this is what task 6 is supposed to look like but it
+// Also fills the cart at the start of visiting the site
+// So I'm a little unsure
+useEffect(() => {
+  const getProducts = async () => {
+
+    const getProduct = await fetch('/api/products',
+      {method: 'get'}) 
+
+    const result = (await getProduct.json() as {data: CartItemProps[]})
+    setCart(result.data)
+    // Just to see that it works
+    console.log(result)
+  }
+    getProducts().catch((error) => {
+      console.error('An error occured while fetching products', error)
+    })
+}, [])
 
 const toggleCart = () => {
   setIsCartOpen(!isCartOpen);
