@@ -52,7 +52,7 @@ export default function ShoppingCartDrawer({
   const purchaseCart = () => {
     cart.forEach((product) => {
       console.log(`Your order of ${product.quantity} ${product.title}
-       has been sent for a total of ${product.price * product.quantity} NOK.`)
+       have been sent for a total of ${product.price * product.quantity} NOK.`)
     })
   }
 
