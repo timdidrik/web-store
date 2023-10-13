@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS below is for ShoppingCartDrawer and buttons */
+
 .cart-drawer {
   background-color: white;
   opacity: 1;
@@ -30,62 +32,6 @@
   margin: 10px; 
 }
 
-
-/* CSS ABOVE IS FOR SHOPPINGCARTDRAWER!!! */
-
-.cart-container {
-  position: relative;
-  display: inline-block;
-  float: right;
-  margin-right: 20px; /* Adjust as needed */
-}
-
-.cart-button {
-  position: relative;
-  display: inline-block;
-}
-
-.cart-button button {
-  margin-left: 10px;
-}
-
-.cart-dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: white;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  padding: 10px;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.cart-item {
-  margin-top: 10px;
-}
-
-.cart-buttons {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-}
-
-.buy-button {
-  margin-top: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.active {
-  background-color: #ccc;
-}
-
 /* Shopping cart button */
 .main-cart-button {
   background-color: #555555;
@@ -100,7 +46,7 @@
   position: absolute;
   top: 5px;
   right: 5px;
-  z-index: 1; /* Hoover effect not working without */
+  z-index: 1; /* Hoover effect/button not working without this */
 }
 
 .main-cart-button:hover {
@@ -112,8 +58,7 @@
   position: relative;
 }
 
-
-/* css below is for cards and its button */
+/* CSS below belongs to cards and the card button */
 
 .product-card {
   display: inline-block;
@@ -140,9 +85,11 @@
   color: #007bff;
 }
 
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
+.cart-container {
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin-right: 20px; 
 }
 
 .card-button {
