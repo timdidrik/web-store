@@ -76,7 +76,7 @@ it('should have a quantity of at least 0 or more, not less', () => {
     const products = getRandomProducts(10)
 
     products.forEach((product) => {
-        expect(product.quantity).not.toBe(-1);
+        expect(product.quantity).toBeGreaterThanOrEqual(0);
     })
 })
 
