@@ -8,5 +8,5 @@ export async function fetchProducts() {
         return await response.json()
     } catch (error) {
         throw new Error('An error occured while fetching products.')
-    }
+    }   
 }
