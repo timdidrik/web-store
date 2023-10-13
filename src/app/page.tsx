@@ -1,7 +1,12 @@
 'use client';
 
-import React from "react";
+import Nav from "@/components/Nav";
+
 
 export default function Home() {
-  return <main>Go to /products!</main>
+  return (
+    <>
+      <Nav />
+    </>
+  )
 }
