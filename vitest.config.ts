@@ -42,6 +42,7 @@ export default mergeConfig(reactConfig, {
       ),
       "@/lib": fileURLToPath(new URL("./src/lib", import.meta.url)),
       "@/features": fileURLToPath(new URL("./src/features", import.meta.url)),
+      "@/hooks": fileURLToPath(new URL("./src/hooks", import.meta.url))
     },
   },
   test: {
