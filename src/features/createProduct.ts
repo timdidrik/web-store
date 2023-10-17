@@ -41,6 +41,7 @@ export const faker: Faker = {
 // Get as many fake random products as you want
 // Need to give each product a unique index
 let idCounter = 0;
+const products: ProductProps[] = [];
 
 export const getRandomProducts = (count: number): ProductProps[] =>
 // Array.from takes two arguments, here --->
@@ -54,3 +55,9 @@ export const getRandomProducts = (count: number): ProductProps[] =>
     price: faker.price(),
     quantity: 1,
   }));
+
+
+  export const addProduct = (product: ProductProps) => {
+    product.id = idCounter++;
+    products.push(product);
+  }
