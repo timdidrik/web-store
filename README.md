@@ -6,3 +6,6 @@ I should have stayed with the odin project instead of wasting my time with uni -
 Not that a README should be updates but:
 Basic functionality works now.
 And I have an insurmountable amount of hatred for typescript, and hydration errors that are almost impossible to debug.
+
+---
+POST request doesn't work with POSTMAN - gives 500 Internal Server Error no matter what I do. 
